@@ -47,6 +47,25 @@ function changeQuote() {
             mobile: "images/Toph-Mobile.jpg"
         }];
 
+    function imageLoader() {
+
+        let img_arr = [];
+
+        for (const i in quoteArr) {
+            let desk_img = quoteArr[i]["image"];
+            let mobile_img = quoteArr[i]["mobile"];
+            img_arr.push(desk_img);
+            img_arr.push(mobile_img);
+        }
+
+        img_arr.forEach(function (ele) {
+            let img = new Image();
+            img.src = ele;
+        });
+    }
+
+    window.onload = imageLoader();
+
     const $main = $("main");
     const $quote = $("#text");
     const $author = $("#author");
